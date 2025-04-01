@@ -2,45 +2,42 @@
 
 # 
 
-[**1\. Objective	3**](#1.-objective)
+[**1\. Objective	]
 
-[**2\. Proposed Solutions	3**](#2.-proposed-solutions)
+[**2\. Proposed Solutions	]
 
-[Approach: Logical Replication with pglogical	3](#approach-1:-logical-replication-with-pglogical)
+[Approach: Logical Replication with pglogical	]
 
-[**3\. Approach 1: Details	3**](#3.-approach-1:-details)
+[**3\. Approach 1: Details	]
 
-[3.1 Architecture Diagram	3](#3.1-architecture-diagram)
+[3.1 Architecture Diagram ]
 
-[3.2 Description	4](#heading=h.t548vdgxh32j)
+[3.2 Description ]
 
-[Implementation Steps:	4](#implementation-steps:)
+[Implementation Steps: ]
 
-[Pros:	4](#pros:)
+[Pros:	]
 
-[Cons:	4](#cons:)
+[Cons:	]
 
-[3.3 Pre-requisites	4](#3.3-pre-requisites)
+[3.3 Pre-requisites	]
 
-[3.3.1 Hardware Requirements	4](#3.3.1-hardware-requirements)
+[3.3.1 Hardware Requirements ]
 
-[3.3.2 Software Requirements	4](#3.3.2-software-requirements)
+[3.3.2 Software Requirements ]
 
-[3.3.3 Networking Requirements	4](#3.3.3-networking-requirements)
-
-# 
+[3.3.3 Networking Requirements ]
 
 # 
 
 # 
 
-## 
+# 
+
 
 ## 
 
-## 
-
-## **1\. Objective** {#1.-objective}
+## **1\. Objective** 
 
 The objective of this project is to set up and configure 4 PostgreSQL containers:
 
@@ -52,9 +49,9 @@ The objective of this project is to set up and configure 4 PostgreSQL containers
 * Queries written on **MasterA** should replicate and be readable from all containers.  
 * Queries written on **MasterB** should replicate and be readable from all containers.
 
-## **2\. Proposed Solutions** {#2.-proposed-solutions}
+## **2\. Proposed Solutions** 
 
-### **Approach 1: Logical Replication with pglogical** {#approach-1:-logical-replication-with-pglogical}
+### **Approach 1: Logical Replication with pglogical** 
 
 * Use `pglogical` extension to configure bi-directional replication.  
 * Enable publication/subscription between MasterA, MasterB, and their respective slaves.  
@@ -70,24 +67,17 @@ The objective of this project is to set up and configure 4 PostgreSQL containers
 * **Why Chosen:** Logical replication via `pglogical` supports bidirectional replication, allowing real-time updates to propagate seamlessly across all containers.
 
 ---
-
 ## 
 
-## 
+## **3\. Approach 1: Details** 
 
-## 
-
-## 
-
-## **3\. Approach 1: Details** {#3.-approach-1:-details}
 
 ### 
 
-### **3.1 Architecture Diagram** {#3.1-architecture-diagram}
+### **3.1 Architecture Diagram** 
 
-       **3.2 Description**
-
-#### **Implementation Steps:** {#implementation-steps:}
+   ![Image](Image\Arch1.png)
+#### **Implementation Steps:** 
 
 1. Create and configure containers using Podman for MasterA, MasterB, SlaveA, and SlaveB.  
 2. Enable `pglogical` extension in PostgreSQL for logical replication.  
@@ -95,33 +85,32 @@ The objective of this project is to set up and configure 4 PostgreSQL containers
 4. Create subscriptions on SlaveA and SlaveB to receive changes.  
 5. Verify replication of tables, data, and DDL changes.
 
-#### **Pros:** {#pros:}
+#### **Pros:** 
 
 * Supports multi-master replication.  
 * Minimal latency for real-time data sync.  
 * Easier to manage and configure.
 
-#### **Cons:** {#cons:}
+#### **Cons:** 
 
 * Higher network traffic due to bidirectional replication.  
 * Requires careful conflict resolution for concurrent writes.
 
-### **3.3 Pre-requisites** {#3.3-pre-requisites}
+### **3.3 Pre-requisites** 
 
-#### **3.3.1 Hardware Requirements** {#3.3.1-hardware-requirements}
+#### **3.3.1 Hardware Requirements** 
 
 * CPU: 4 cores  
 * RAM: 8 GB  
 * Storage: 100 GB
 
-#### **3.3.2 Software Requirements** {#3.3.2-software-requirements}
-
+#### **3.3.2 Software Requirements** 
 * Podman: v4.5+  
 * PostgreSQL: v16+  
 * pglogical: v3.4  
 * Operating System: Ubuntu 22.04 LTS
 
-#### **3.3.3 Networking Requirements** {#3.3.3-networking-requirements}
+#### **3.3.3 Networking Requirements** 
 
 * Network A: 192.168.100.0/24  
 * Network B: 192.168.200.0/24  
