@@ -50,8 +50,9 @@ Goal Set up 4 PostgreSQL containers (MasterA, MasterB, SlaveA, and SlaveB) and c
 | **Then** |  | The same record is available in MasterB, SlaveA, and SlaveB using SELECT queries. |  |  |  |
 | **Test Run** |  | **Date** |  | **Result** |  |
 
-![Image](Image\TC1.png)
-![Image](Image\TC1.2.png)
+![Image](Image/TC1.png)
+![Image](Image/TC1.2.png)
+
 
 
 ## 
@@ -66,8 +67,8 @@ Goal Set up 4 PostgreSQL containers (MasterA, MasterB, SlaveA, and SlaveB) and c
 | **Then** |  | The same record is available in MasterA, SlaveA, and SlaveB using SELECT queries. |  |  |  |
 | **Test Run** |  | **Date** |  | **Result** | Pending/Pass/Fail |
 
-![Image](Image\TC2.png)
-![Image](Image\TC2.1.png)
+![Image](Image/TC2.png)
+![Image](Image/TC2.1.png)
 
 ### 
 
@@ -86,7 +87,7 @@ Goal Set up 4 PostgreSQL containers (MasterA, MasterB, SlaveA, and SlaveB) and c
 | **Then** |  | The correct data is returned from all containers. |  |  |  |
 | **Test Run** |  | **Date** | 12-01-2025 | **Result** | Pass |
 
-![Image](Image\TC1.2.png)
+![Image](Image/TC1.2.png)
 
 
 ## 

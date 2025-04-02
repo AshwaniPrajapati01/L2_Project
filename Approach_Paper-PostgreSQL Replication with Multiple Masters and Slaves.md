@@ -76,7 +76,7 @@ The objective of this project is to set up and configure 4 PostgreSQL containers
 
 ### **3.1 Architecture Diagram** 
 
-   ![Image](Image\Arch1.png)
+![Image](Image/Arch1.png)
 #### **Implementation Steps:** 
 
 1. Create and configure containers using Podman for MasterA, MasterB, SlaveA, and SlaveB.  
